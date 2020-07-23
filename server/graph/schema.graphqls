@@ -2,6 +2,7 @@
 #
 # https://gqlgen.com/getting-started/
 
+# 以下GORM用にmodels.goで再定義
 type Todo {
   id: String!
   text: String!
@@ -16,13 +17,7 @@ type User {
   todos: [Todo!]!
 }
 
-type Query {
-  todos: [Todo!]!
-  users: [User!]!
-  todo(id: String!): Todo!
-  user(id: String!): User!
-}
-
+# 以下medels_gen.goに自動生成
 input NewTodo {
   text: String!
   userId: String!
@@ -37,6 +32,14 @@ input EditTodo {
 
 input NewUser {
   name: String!
+}
+
+# 以下関数自動生成
+type Query {
+  todos: [Todo!]!
+  users: [User!]!
+  todo(id: String!): Todo!
+  user(id: String!): User!
 }
 
 type Mutation {
