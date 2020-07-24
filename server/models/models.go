@@ -13,13 +13,3 @@ type User struct {
 	ID   string `gorm:"column:id;primary_key"`
 	Name string `gorm:"column:name"`
 }
-
-// TableName is
-func (u *Todo) TableName() string {
-	return "todo"
-}
-
-// TableName is
-func (u *User) TableName() string {
-	return "user"
-}
